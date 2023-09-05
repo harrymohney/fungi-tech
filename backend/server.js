@@ -1,41 +1,60 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+require('dotenv').config()
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//db connection import occurs after dotenv so module can access process.env object with populated key/value pairs
+require('./config/database')
 
-var app = express();
+const express = require('express')
+const Grow = require('./models/grow')
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+const cors = require('cors')
+const morgan = require('morgan')
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+///////////////////////////////
+// APP CONFIG
+////////////////////////////////
+const { PORT } = process.env
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+const app = express()
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+///////////////////////////////
+// MIDDLEWARE
+////////////////////////////////
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// mount express urlencoded - body parser - x-www-urlencoded data (process data from form submission)
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+app.use(express.urlencoded({extended: true}))
+// mount express JSON body parser
+app.use(express.json()) // look for a request 'Content-Type' - 'application/json' -> req.body ({...} or [{...}, {...}])
 
-module.exports = app;
+
+app.use(cors())
+
+app.use(morgan('dev'))
+// app.use('/people', peopleRouter)
+
+app.get('/', (req,res)=>{
+    res.send('hello world')
+})
+
+app.post('/grow', async (req, res) => {
+  const type = req.body.type;
+  const weight = req.body.weight;
+  const substrate = req.body.substrate;
+  const yield = req.body.yield;
+  const notes = req.body.notes;
+  const entryId = req.body.entryId;
+
+
+  const grow = await Grow.create({
+    type: type,
+    weight: weight,
+    substrate: substrate,
+    yield: yield,
+    notes: notes,
+    entryId: entryId
+  })
+
+  res.json({ grow: grow })
+})
+
+app.listen(PORT, ()=>console.log(`Listening on port: ${PORT}`))
