@@ -21,6 +21,9 @@ app.use(morgan('dev'));
 const strainsRouter = require('./routes/strains');
 app.use('/strains', strainsRouter);
 
+const culturesRouter = require('./routes/cultures');
+app.use('/cultures', culturesRouter);
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
