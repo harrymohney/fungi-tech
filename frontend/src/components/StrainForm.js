@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { addStrain } from '../utilities/strain-api';
+import { useNavigate } from 'react-router-dom';
 
 const StrainForm = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -17,8 +16,7 @@ const StrainForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await addStrain(formData);
-      history.push('/strains');
+      navigate('/strains');
     } catch (error) {
       console.error('Error adding strain:', error);
     }

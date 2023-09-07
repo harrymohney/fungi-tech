@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getStrains } from '../utilities/strain-api';
 
 const StrainList = () => {
   const [strains, setStrains] = useState([]);
 
   useEffect(() => {
-    const fetchStrains = async () => {
-      const data = await getStrains();
-      setStrains(data);
-    };
+    const placeholderStrains = [
+      { id: 1, name: 'Lion`s Mane' },
+      { id: 2, name: 'Reishi' },
+      { id: 3, name: 'Oyster' },
+      { id: 4, name: 'Shitake' },
+      { id: 5, name: 'Enoki' },
+    ];
 
-    fetchStrains();
+    setTimeout(() => {
+      setStrains(placeholderStrains);
+    }, 1000);
   }, []);
 
   return (
@@ -29,3 +33,4 @@ const StrainList = () => {
 };
 
 export default StrainList;
+

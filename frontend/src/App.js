@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StrainList from './components/StrainList';
 import StrainDetail from './components/StrainDetail';
 import StrainForm from './components/StrainForm';
@@ -7,16 +7,17 @@ function App() {
   return (
     <Router>
       <div>
-        <>
-          <Route path="/strains/add" component={StrainForm} />
-          <Route path="/strains/:id" component={StrainDetail} />
-          <Route path="/strains" component={StrainList} />
-          <Route path="/" component={StrainList} />
-        </>
+        <Routes>
+          <Route path="/strains/add" element={<StrainForm />} />
+          <Route path="/strains/:id" element={<StrainDetail />} />
+          <Route path="/strains" element={<StrainList />} />
+          <Route path="/" element={<StrainList />} />
+        </Routes>
       </div>
     </Router>
   );
 }
 
 export default App;
+
 

@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getStrainById } from '../utilities/strain-api';
 
 const StrainDetail = () => {
   const { id } = useParams();
   const [strain, setStrain] = useState(null);
 
   useEffect(() => {
-    const fetchStrain = async () => {
-      const data = await getStrainById(id);
-      setStrain(data);
+    const placeholderStrain = {
+      id: id,
+      name: 'Strain',
+      description: 'Lorem Ipsum',
     };
 
-    fetchStrain();
+    setTimeout(() => {
+      setStrain(placeholderStrain);
+    }, 1000);
   }, [id]);
 
   return (
