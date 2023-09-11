@@ -7,7 +7,7 @@ const StrainDetail = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`/api/strains/${id}`);
+      const response = await fetch(`localhost:4000/strains/${id}/`);
       const data = await response.json();
       setStrain(data);
     };

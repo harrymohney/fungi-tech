@@ -1,13 +1,25 @@
 import * as strainsAPI from './strains-api'
 
-export async function getStrains() {
-    try {
-        const data = await strainsAPI.index()
-        return data
-    } catch (err) {
-        return err
-    }
+
+async function getAllStrains() {
+  const getAllStrains = require('../components/StrainList');
+  try {
+    let result = await getAllStrains();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
 }
+
+
+// export async function getStrains() {
+//     try {
+//         const data = await strainsAPI.index()
+//         return data
+//     } catch (err) {
+//         return err
+//     }
+// }
 
 export async function createStrain(newStrainData) {
     try {
