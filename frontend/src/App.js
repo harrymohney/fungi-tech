@@ -2,11 +2,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StrainList from './components/StrainList';
 import StrainDetail from './components/StrainDetail';
 import StrainForm from './components/StrainForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="body-background">
         <Routes>
           <Route path="/strains/add" element={<StrainForm />} />
           <Route path="/strains/:id" element={<StrainDetail />} />

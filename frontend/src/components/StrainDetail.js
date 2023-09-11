@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const StrainDetail = () => {
   const { id } = useParams();
@@ -18,16 +18,24 @@ const StrainDetail = () => {
   }, [id]);
 
   return (
-    <div>
-      {strain ? (
-        <div>
-          <h2>{strain.name} Details</h2>
-          <p>Description: {strain.description}</p>
-          {/* add more details as needed */}
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="bg-light p-4 rounded shadow text-center">
+            {strain ? (
+              <div>
+                <h2 className="text-3xl font-bold">{strain.name} Details</h2>
+                <p className="mt-3">Description: {strain.description}</p>
+                <Link to="/strains" className="btn btn-primary mt-3">
+                  Back to Strains List
+                </Link>
+              </div>
+            ) : (
+              <p className="mt-3">Loading...</p>
+            )}
+          </div>
         </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+      </div>
     </div>
   );
 };
