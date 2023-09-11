@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import StrainList from './components/StrainList';
-import StrainDetail from './components/StrainDetail';
 import StrainForm from './components/StrainForm';
+import StrainDetail from './pages/Show';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -21,5 +21,3 @@ function App() {
 }
 
 export default App;
-
-
