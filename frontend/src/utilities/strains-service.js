@@ -12,6 +12,7 @@ export async function getStrains() {
 export async function createStrain(newStrainData) {
     try {
         const data = await strainsAPI.create(newStrainData)
+        console.log(data)
         return data
     } catch (err) {
         return err

@@ -15,6 +15,7 @@ export async function index() {
 }
 
 export async function create(data) {
+  console.log(data)
   const config = {
     method: "POST",
     headers: {

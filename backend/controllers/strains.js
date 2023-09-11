@@ -1,6 +1,7 @@
 const Strain = require('../models/Strain');
 
 async function createStrain(req, res) {
+  console.log(req.body)
   try {
     const newStrain = await Strain.create(req.body);
     res.status(201).json(newStrain);
