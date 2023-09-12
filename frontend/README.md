@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Fungi-Tech
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Grow tracking app that allows users to record isolated grow methods. The user may choose between strains, grow methods and components of the grow. The user will have the ability to customize their grow and track the yields to discover the optimal method for each strain. Secondary use will be user referencing past grows to gauge progress.
 
-## Available Scripts
+# Screenshot
+<img src="frontend/public/wf1.png" height="300px">
+<img src="frontend/public/wf2.png" height="300px">
 
-In the project directory, you can run:
+# Technologies Used
 
-### `npm start`
+- JavaScript
+- JSX
+- Bootstrap
+- React
+- Express
+- Node.js
+- Mongoose & MongoDB
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Strain info:** 
+https://northspore.com/blogs/the-black-trumpet
+- **pictures from imgur:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Trello Board
+- https://trello.com/b/KUNfi4NN/fungi-tech 
+### App Link
+- https://fungi-tech-q2tn9rgnv-harrymohney.vercel.app/
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Open app: Strain List, View Details or create a new Strain 
+2. Input Strain: name, description, imageUrl, strainUrl →  Add Strain
+3. Delete Strain is active
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Application Features
+1. When a user chooses the strain they can view details, delete, or create a new strain: 
+    - the app has very basic functionality, but will store the data added
+    <br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+- As a user, I want an organized way to keep track of my mushroom genetics so I can manage their progress and avoid expiration.
+- As a user, I would like a database of genetics I have stored and the ability to fetch information about the strain.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Future Application Updates
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- As a user, I’d like to store information about grow cycles on specific strains of mushrooms - humidity, temp, times, yield, light cycle, input (substrate, inoculation, fruiting times).
