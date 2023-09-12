@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = 'https://fungi-tech-backend-458721741ac9.herokuapp.com';
 
 console.log(BASE_URL);
 

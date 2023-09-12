@@ -12,7 +12,7 @@ export default function MainNav(props) {
       <Link to="/">
         <img src={brandImage} alt="Brand Logo" />
       </Link>
-      <div>People App!</div>
+      <div></div>
     </nav>
   );
 }

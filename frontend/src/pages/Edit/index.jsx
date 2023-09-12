@@ -36,4 +36,3 @@ export default function Edit(props) {
 
   return <EditStrainForm initialData={strain} />;
 }
-

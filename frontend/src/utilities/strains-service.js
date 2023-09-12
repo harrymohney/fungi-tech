@@ -11,16 +11,6 @@ async function getAllStrains() {
   }
 }
 
-
-// export async function getStrains() {
-//     try {
-//         const data = await strainsAPI.index()
-//         return data
-//     } catch (err) {
-//         return err
-//     }
-// }
-
 export async function createStrain(newStrainData) {
     try {
         const data = await strainsAPI.create(newStrainData)

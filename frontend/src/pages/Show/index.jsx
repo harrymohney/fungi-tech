@@ -44,18 +44,26 @@ export default function Show(props) {
   return isLoading ? (
     <Spinner />
   ) : (
-    <div className="container mt-5">
+    <div className="container mt-0 pt-4 text-center">
       <div className="Strain">
-        <p>Strain App Profile: {strain._id}</p>
+        <p className="text-white font-weight-bold">Strain ID: {strain._id}</p>
 
-        <h3>{strain.name}</h3>
-        <img src={strain.image} alt={`${strain.name} profile pic`} />
-        <p>{strain.description}</p>
-        <div>
-          <button className="btn btn-danger" onClick={handleDelete}>
+        <h3 className="text-white font-weight-bold">{strain.name} Details</h3>
+
+        <img
+          src={strain.imageUrl}
+          alt={`${strain.name} profile pic`}
+          className="img-fluid rounded"
+          style={{ maxWidth: '100%' }}
+        />
+
+        <p className="text-white mt-3 font-weight-bold">{strain.description}</p>
+
+        <div className="text-center pb-3">
+          <button className="btn btn-danger mx-2 py-2" onClick={handleDelete}>
             Remove Strain
           </button>
-          <Link className="btn btn-primary" to={`/strains/${strain._id}/edit`}>
+          <Link className="btn btn-primary mx-2 py-2" to={`/strains/${strain._id}/edit`}>
             Edit Strain
           </Link>
         </div>
@@ -63,4 +71,3 @@ export default function Show(props) {
     </div>
   );
 }
-

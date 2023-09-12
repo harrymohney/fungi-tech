@@ -3,7 +3,7 @@ import { createStrain } from '../../utilities/strains-service';
 
 const initState = {
   name: '',
-  imageURL: '',
+  imageUrl: '',
   description: '',
 };
 
@@ -39,13 +39,13 @@ export default function NewStrainForm({ updateStrains }) {
             required
           />
         </label>
-        <label htmlFor="image">
+        <label htmlFor="imageUrl">
           Strain Image
           <input
             type="text"
-            name="image"
-            id="image"
-            value={newForm.image}
+            name="imageUrl"
+            id="imageUrl"
+            value={newForm.imageUrl}
             onChange={handleChange}
             placeholder="Add an image URL"
           />

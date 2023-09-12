@@ -9,7 +9,7 @@ export default function StrainList({ strains }) {
             <h3>{strain.name}</h3>
             <img
               className="strain-image"
-              src={strain.image}
+              src={strain.imageUrl}
               alt={strain.name}
             />
             <p>{strain.description}</p>

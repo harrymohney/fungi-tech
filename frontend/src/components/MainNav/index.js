@@ -12,10 +12,9 @@ export default function Main(props) {
         <Route path="/" element={<Strains />} />
         <Route path="/strains/:id" element={<Show />} />
         <Route path="/strains/:id/edit" element={<Edit />} />
-        <Route path="/StrainList" element={<h1>StrainList</h1>} />
+        <Route path="/home" element={<h1>Home</h1>} />
         <Route path="/*" element={<_404 />} />
       </Routes>
     </main>
   );
 }
-

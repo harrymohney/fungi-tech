@@ -7,14 +7,14 @@ export default function EditStrainForm({ initialData }) {
   const navigate = useNavigate();
   const defaultState = initialData
     ? { ...initialData }
-    : { name: '', image: '', description: '' };
+    : { name: '', imageUrl: '', description: '' };
 
   const [formData, setFormData] = useState(defaultState);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const { name, image, description } = formData;
-    const updatedData = { name, image, description };
+    const { name, imageUrl, description } = formData;
+    const updatedData = { name, imageUrl, description };
 
     try {
       const updateResponse = await updateStrain(id, updatedData);
@@ -33,10 +33,10 @@ export default function EditStrainForm({ initialData }) {
 
   return (
     <div className="container mt-5">
-      <h2 className="text-success text-center">Edit Strain:</h2>
+      <h2 className="text-white text-center">Edit Strain:</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="name" className="form-label text-success fw-bold">
+          <label htmlFor="name" className="form-label text-white fw-bold">
             Strain Name:
           </label>
           <input
@@ -51,21 +51,21 @@ export default function EditStrainForm({ initialData }) {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="image" className="form-label text-success fw-bold">
+          <label htmlFor="imageUrl" className="form-label text-white fw-bold">
             Strain Image:
           </label>
           <input
             type="text"
-            name="image"
-            id="image"
+            name="imageUrl"
+            id="imageUrl"
             placeholder="Add an image URL"
-            value={formData.image}
+            value={formData.imageUrl}
             onChange={handleChange}
             className="form-control"
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="description" className="form-label text-success fw-bold">
+          <label htmlFor="description" className="form-label text-white fw-bold">
             Description:
           </label>
           <textarea
@@ -86,4 +86,3 @@ export default function EditStrainForm({ initialData }) {
     </div>
   );
 }
-
